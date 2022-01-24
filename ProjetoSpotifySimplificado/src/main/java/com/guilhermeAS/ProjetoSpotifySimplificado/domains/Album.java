@@ -1,26 +1,28 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 
-public class playlist {
-    private String nomePlaylist;
-    private album musica;
+
+public class Album {
+    private String nomeAlbum;
+    private String musica;
     private Integer numeroFaixa;
 
-    public playlist() {
+    public Album(){
+
     }
 
-    public String getNomePlaylist() {
-        return nomePlaylist;
+    public String getNomeAlbum() {
+        return nomeAlbum;
     }
 
-    public void setNomePlaylist(String nomePlaylist) {
-        this.nomePlaylist = nomePlaylist;
+    public void setNomeAlbum(String nomeAlbum) {
+        this.nomeAlbum = nomeAlbum;
     }
 
-    public album getMusica() {
+    public String getMusica() {
         return musica;
     }
 
-    public void setMusica(album musica) {
+    public void setMusica(String musica) {
         this.musica = musica;
     }
 
