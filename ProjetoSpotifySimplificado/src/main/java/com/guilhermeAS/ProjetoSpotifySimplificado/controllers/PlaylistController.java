@@ -1,8 +1,9 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.controllers;
 
 
-import com.guilhermeAS.ProjetoSpotifySimplificado.domains.ArtistaGrupo;
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Playlist;
+import com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp.PlaylistService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,62 +12,44 @@ import java.util.List;
 @RestController
 @RequestMapping("/playlist")
 public class PlaylistController {
+
+    @Autowired
+    private PlaylistService playlistService;
+
     Long id = 0L;
 
     @PostMapping
     public ResponseEntity<Playlist> criarPlaylist(@RequestBody Playlist nomePlaylist) {
-        nomePlaylist.getNomePlaylist();
+        Playlist playlistCriar = playlistService.criarPlaylist(nomePlaylist);
 
-        if (nomePlaylist.getNomePlaylist().length() <= 3) {
-            return ResponseEntity.unprocessableEntity().build();
-        }
-
-        nomePlaylist.setIdPlaylist(id++);
-
-        return ResponseEntity.created(null).body(nomePlaylist);
+        return ResponseEntity.created(null).body(playlistCriar);
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Playlist> atualizarPlaylist (@RequestBody Playlist nomePlaylist, @PathVariable Long id){
-        nomePlaylist.setNomePlaylist("Favoritas");
-        nomePlaylist.setIdPlaylist(id++);
-        return ResponseEntity.ok(nomePlaylist);
+    public ResponseEntity<Playlist> atualizarPlaylist(@RequestBody Playlist nomePlaylist, @PathVariable Long id) {
+        Playlist atualizarPlaylist = playlistService.atualizarPlaylist(nomePlaylist, id);
+
+        return ResponseEntity.ok(atualizarPlaylist);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> apagarPlaylsit(@PathVariable Long id){
+    public ResponseEntity<String> apagarPlaylsit(@PathVariable Long id) {
+        playlistService.apagarPlaylsit(id);
+
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping
-    public ResponseEntity<List<Playlist>> listar(){
-        Playlist pl1 = new Playlist();
-        pl1.setIdPlaylist(id++);
-        pl1.setNomePlaylist("As Favoritas");
+    public ResponseEntity<List<Playlist>> listar() {
+        List<Playlist> listarPlaylist = playlistService.listar();
 
-
-        Playlist pl2 = new Playlist();
-        pl2.setIdPlaylist(id++);
-        pl2.setNomePlaylist("As mais tocadas");
-
-
-        Playlist pl3 = new Playlist();
-        pl3.setIdPlaylist(id++);
-        pl3.setNomePlaylist("Moments :p");
-
-        return ResponseEntity.ok(List.of(
-                pl1,
-                pl2,
-                pl3
-        ));
+        return ResponseEntity.ok(listarPlaylist);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Playlist> selecionar(@PathVariable Long id){
-        Playlist pl1 = new Playlist();
-        pl1.setIdPlaylist(id);
-        pl1.setNomePlaylist("Codar");
+    public ResponseEntity<Playlist> selecionar(@PathVariable Long id) {
+        Playlist selecionarPlaylist = playlistService.selecionar(id);
 
-        return ResponseEntity.ok(pl1);
+        return ResponseEntity.ok(selecionarPlaylist);
     }
 }
