@@ -1,13 +1,29 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Album {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nomeAlbum;
     private String musica;
-    private Integer numeroFaixa;
 
     public Album(){
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNomeAlbum() {
@@ -26,11 +42,4 @@ public class Album {
         this.musica = musica;
     }
 
-    public Integer getNumeroFaixa() {
-        return numeroFaixa;
-    }
-
-    public void setNumeroFaixa(Integer numeroFaixa) {
-        this.numeroFaixa = numeroFaixa;
-    }
 }

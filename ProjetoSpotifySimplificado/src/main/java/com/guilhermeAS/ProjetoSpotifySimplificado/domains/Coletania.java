@@ -1,20 +1,45 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 
+import javax.persistence.*;
+
+@Entity
 public class Coletania {
-    private ArtistaGrupo nome;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nomeColetania;
+    @OneToOne
+    private ArtistaGrupo artistaNome;
+    @OneToOne
     private Album nomeAlmbum;
-    private Album numeroFaixa;
 
     public Coletania(){
 
     }
 
-    public ArtistaGrupo getNome() {
-        return nome;
+    public String getNomeColetania() {
+        return nomeColetania;
     }
 
-    public void setNome(ArtistaGrupo nome) {
-        this.nome = nome;
+    public void setNomeColetania(String nomeColetania) {
+        this.nomeColetania = nomeColetania;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public ArtistaGrupo getArtistaNome() {
+        return artistaNome;
+    }
+
+    public void setArtistaNome(ArtistaGrupo artistaNome) {
+        this.artistaNome = artistaNome;
     }
 
     public Album getNomeAlmbum() {
@@ -25,11 +50,5 @@ public class Coletania {
         this.nomeAlmbum = nomeAlmbum;
     }
 
-    public Album getNumeroFaixa() {
-        return numeroFaixa;
-    }
 
-    public void setNumeroFaixa(Album numeroFaixa) {
-        this.numeroFaixa = numeroFaixa;
-    }
 }
