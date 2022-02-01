@@ -1,8 +1,18 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Playlist {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPlaylist;
-    private String nomePlaylist;
+    private String nome;
+
 
     public Long getIdPlaylist() {
         return idPlaylist;
@@ -15,12 +25,12 @@ public class Playlist {
     public Playlist() {
     }
 
-    public String getNomePlaylist() {
-        return nomePlaylist;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomePlaylist(String nomePlaylist) {
-        this.nomePlaylist = nomePlaylist;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
 

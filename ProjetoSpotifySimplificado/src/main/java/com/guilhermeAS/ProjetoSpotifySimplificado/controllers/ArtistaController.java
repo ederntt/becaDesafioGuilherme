@@ -46,7 +46,7 @@ public class ArtistaController { // CRUD = CREAT - READ - UPDATE - DELETE
         return ResponseEntity.ok(listarArtistas);
     }
 
-    @GetMapping("/{nome}")
+    @GetMapping("/{id}")
     public ResponseEntity<ArtistaGrupo> escolher(@PathVariable Integer id) {
         ArtistaGrupo escolherArtista = artistaService.escolher(id);
 

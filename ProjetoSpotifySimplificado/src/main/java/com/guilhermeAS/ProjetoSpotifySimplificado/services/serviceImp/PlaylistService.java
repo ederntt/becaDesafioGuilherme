@@ -1,63 +1,64 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Playlist;
+import com.guilhermeAS.ProjetoSpotifySimplificado.repositories.PlaylistRepository;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.InterfacePlaylist;
-import org.springframework.http.ResponseEntity;
+import org.jetbrains.annotations.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PlaylistService implements InterfacePlaylist {
 
-    Long id = 0L;
+    @Autowired
+    private ArtistaService artistaService;
 
+    @Autowired
+    private PlaylistRepository playlistRepository;
+
+    @Override
     public Playlist criarPlaylist(Playlist nomePlaylist) {
-        nomePlaylist.getNomePlaylist();
+        if (nomePlaylist.getNome().length() <= 0){
+            throw new RuntimeException("Você não inseriu o nome da playlist!");
+        }
 
-        nomePlaylist.setIdPlaylist(id++);
-
-        return nomePlaylist;
+        return playlistRepository.save(nomePlaylist);
     }
 
-    public Playlist atualizarPlaylist (Playlist nomePlaylist, Long id){
-        nomePlaylist.setNomePlaylist("Favoritas");
-        nomePlaylist.setIdPlaylist(id++);
-        return nomePlaylist;
+    @Override
+    public Playlist atualizarPlaylist (@NotNull Playlist nomePlaylist, Long id){
+        Playlist atualizar = this.selecionar(id);
+        atualizar.setNome(nomePlaylist.getNome());
+
+        playlistRepository.save(atualizar);
+
+        return atualizar;
     }
 
+    @Override
     public void apagarPlaylsit(Long id){
- //
+        playlistRepository.deleteById(id);
     }
 
+    @Override
     public List<Playlist> listar(){
-        Playlist pl1 = new Playlist();
-        pl1.setIdPlaylist(id++);
-        pl1.setNomePlaylist("As Favoritas");
 
-
-        Playlist pl2 = new Playlist();
-        pl2.setIdPlaylist(id++);
-        pl2.setNomePlaylist("As mais tocadas");
-
-
-        Playlist pl3 = new Playlist();
-        pl3.setIdPlaylist(id++);
-        pl3.setNomePlaylist("Moments :p");
-
-        return List.of(
-                pl1,
-                pl2,
-                pl3
-        );
+        return playlistRepository.findAll();
     }
 
+    @Override
     public Playlist selecionar(Long id){
-        Playlist pl1 = new Playlist();
-        pl1.setIdPlaylist(id);
-        pl1.setNomePlaylist("Codar");
+       Optional<Playlist> escolher = playlistRepository.findById(id);
 
-        return pl1;
+        if (escolher.isPresent()){
+            return escolher.get();
+        }
+
+        throw new RuntimeException("Playlist não localizada!! ");
+
     }
 
 }
