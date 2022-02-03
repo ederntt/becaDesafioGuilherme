@@ -1,6 +1,6 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp;
 
-import com.guilhermeAS.ProjetoSpotifySimplificado.domains.ArtistaGrupo;
+import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Artista;
 import com.guilhermeAS.ProjetoSpotifySimplificado.repositories.ArtistaRepository;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.InterfaceArtista;
 import org.jetbrains.annotations.NotNull;
@@ -17,15 +17,15 @@ public class ArtistaService implements InterfaceArtista {
     private ArtistaRepository artistaRepository;
 
     @Override
-    public ArtistaGrupo criar(@NotNull ArtistaGrupo nomeArtista) {
-        ArtistaGrupo artistaSalvo = artistaRepository.save(nomeArtista);
+    public Artista criar(@NotNull Artista nomeArtista) {
+        Artista artistaSalvo = artistaRepository.save(nomeArtista);
 
         return artistaSalvo;
     }
 
     @Override
-    public ArtistaGrupo atualizar(@NotNull ArtistaGrupo nomeArtista, Integer id) {
-        ArtistaGrupo modificar = this.escolher(id);
+    public Artista atualizar(@NotNull Artista nomeArtista, Integer id) {
+        Artista modificar = this.escolher(id);
         modificar.setNome(nomeArtista.getNome());
 
         artistaRepository.save(modificar);
@@ -39,7 +39,7 @@ public class ArtistaService implements InterfaceArtista {
     }
 
     @Override
-    public List<ArtistaGrupo> listar() {
+    public List<Artista> listar() {
 
        // List<ArtistaGrupo> listaArtistas =
         return artistaRepository.findAll();
@@ -47,8 +47,8 @@ public class ArtistaService implements InterfaceArtista {
     }
 
     @Override
-    public ArtistaGrupo escolher( Integer id) {
-        Optional<ArtistaGrupo> obter = artistaRepository.findById(id);
+    public Artista escolher(Integer id) {
+        Optional<Artista> obter = artistaRepository.findById(id);
 
         if (obter.isPresent()){
             return obter.get();

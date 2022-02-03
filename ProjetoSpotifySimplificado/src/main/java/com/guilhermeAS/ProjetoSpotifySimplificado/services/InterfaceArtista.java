@@ -1,20 +1,20 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.services;
 
-import com.guilhermeAS.ProjetoSpotifySimplificado.domains.ArtistaGrupo;
+import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Artista;
 
 import java.util.List;
 
 public interface InterfaceArtista {
 
-    ArtistaGrupo criar(ArtistaGrupo nome);
+    Artista criar(Artista nome);
 
-    ArtistaGrupo atualizar(ArtistaGrupo nome, Integer id);
+    Artista atualizar(Artista nome, Integer id);
 
     void deletar(Integer id);
 
-    List<ArtistaGrupo> listar();
+    List<Artista> listar();//
 
-    ArtistaGrupo escolher(Integer id);
+    Artista escolher(Integer id);
 
 
 }

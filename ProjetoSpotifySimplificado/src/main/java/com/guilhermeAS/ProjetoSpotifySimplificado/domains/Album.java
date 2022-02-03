@@ -1,9 +1,6 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Album {
@@ -13,6 +10,13 @@ public class Album {
     private Long id;
     private String nomeAlbum;
     private String musica;
+
+    @OneToOne
+    private Artista idArtista;
+
+    public Artista getIdArtista() {
+        return idArtista;
+    }
 
     public Album(){
 

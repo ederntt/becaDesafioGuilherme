@@ -1,9 +1,6 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Playlist {
@@ -13,6 +10,8 @@ public class Playlist {
     private Long idPlaylist;
     private String nome;
 
+    @ManyToOne
+    private Musica musica;
 
     public Long getIdPlaylist() {
         return idPlaylist;
@@ -33,5 +32,11 @@ public class Playlist {
         this.nome = nome;
     }
 
+    public Musica getMusica() {
+        return musica;
+    }
 
+    public void setMusica(Musica musica) {
+        this.musica = musica;
+    }
 }

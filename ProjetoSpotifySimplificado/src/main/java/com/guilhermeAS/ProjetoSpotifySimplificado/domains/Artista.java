@@ -3,22 +3,12 @@ package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 import javax.persistence.*;
 
 @Entity
-public class ArtistaGrupo {
+public class Artista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    @OneToOne
-    private Coletania coletania;
-
-    public Coletania getColetania() {
-        return coletania;
-    }
-
-    public void setColetania(Coletania coletania) {
-        this.coletania = coletania;
-    }
 
     @Override
     public String toString() {
