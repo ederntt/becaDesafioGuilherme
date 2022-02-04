@@ -3,6 +3,7 @@ package com.guilhermeAS.ProjetoSpotifySimplificado.controllers;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Playlist;
 import com.guilhermeAS.ProjetoSpotifySimplificado.dtos.PlaylistDTO;
+import com.guilhermeAS.ProjetoSpotifySimplificado.mappers.PlaylistMapper;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp.PlaylistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ public class PlaylistController {
 
     @Autowired
     private PlaylistService playlistService;
+    @Autowired
+    private PlaylistMapper mapperP;
 
     @PostMapping
     public ResponseEntity<Playlist> criarPlaylist(@RequestBody Playlist nomePlaylist) {
@@ -42,7 +45,7 @@ public class PlaylistController {
     public ResponseEntity<List<PlaylistDTO>> listar() {
         List<Playlist> listarPlaylist = playlistService.listar();
 
-        return ResponseEntity.ok(PlaylistDTO.converter(listarPlaylist));
+        return ResponseEntity.ok(mapperP.playlistToPlaylistDTO(listarPlaylist));
     }
 
     @GetMapping("/{id}")

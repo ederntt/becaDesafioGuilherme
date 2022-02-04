@@ -3,21 +3,20 @@ package com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp;
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Playlist;
 import com.guilhermeAS.ProjetoSpotifySimplificado.repositories.PlaylistRepository;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.InterfacePlaylist;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class PlaylistService implements InterfacePlaylist {
 
-    @Autowired
-    private ArtistaService artistaService;
+    private final ArtistaService artistaService;
 
-    @Autowired
-    private PlaylistRepository playlistRepository;
+    private final PlaylistRepository playlistRepository;
 
     @Override
     public Playlist criarPlaylist(Playlist nomePlaylist) {
@@ -30,8 +29,10 @@ public class PlaylistService implements InterfacePlaylist {
 
     @Override
     public Playlist atualizarPlaylist (@NotNull Playlist nomePlaylist, Long id){
-        Playlist atualizar = this.selecionar(id);
-        atualizar.setNome(nomePlaylist.getNome());
+        Playlist atualizar = playlistRepository.findByNome(nomePlaylist.getNome());
+
+        for(int i =0; i <= nomePlaylist.getMusica().size()-1;i++ )
+            atualizar.getMusica().add(nomePlaylist.getMusica().get(i));
 
         playlistRepository.save(atualizar);
 

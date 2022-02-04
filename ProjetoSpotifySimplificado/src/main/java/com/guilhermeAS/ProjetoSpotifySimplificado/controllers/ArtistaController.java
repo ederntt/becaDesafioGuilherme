@@ -2,6 +2,7 @@ package com.guilhermeAS.ProjetoSpotifySimplificado.controllers;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Artista;
 import com.guilhermeAS.ProjetoSpotifySimplificado.dtos.ArtistaDTO;
+import com.guilhermeAS.ProjetoSpotifySimplificado.mappers.ArtistaMapper;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp.ArtistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,8 @@ public class ArtistaController { // CRUD = CREAT - READ - UPDATE - DELETE
     //modificar integer para long
     @Autowired
     private ArtistaService artistaService;
+    @Autowired
+    private ArtistaMapper mapper;
 
 
     @PostMapping
@@ -43,7 +46,7 @@ public class ArtistaController { // CRUD = CREAT - READ - UPDATE - DELETE
     public ResponseEntity<List<ArtistaDTO>> listar() {
         List<Artista> listarArtistas = artistaService.listar();
 
-       return ResponseEntity.ok(ArtistaDTO.convert(listarArtistas));
+       return ResponseEntity.ok(mapper.artistaToArtistaDTO(listarArtistas));
     }
 
     @GetMapping("/{id}")

@@ -1,26 +1,29 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Artista;
+import com.guilhermeAS.ProjetoSpotifySimplificado.dtos.ArtistaDTO;
+import com.guilhermeAS.ProjetoSpotifySimplificado.mappers.ArtistaMapper;
 import com.guilhermeAS.ProjetoSpotifySimplificado.repositories.ArtistaRepository;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.InterfaceArtista;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class ArtistaService implements InterfaceArtista {
 
-    @Autowired
-    private ArtistaRepository artistaRepository;
+    private final ArtistaRepository artistaRepository;
+
+    private final ArtistaMapper artistaMapper;
 
     @Override
     public Artista criar(@NotNull Artista nomeArtista) {
-        Artista artistaSalvo = artistaRepository.save(nomeArtista);
 
-        return artistaSalvo;
+        return artistaRepository.save(nomeArtista);
     }
 
     @Override

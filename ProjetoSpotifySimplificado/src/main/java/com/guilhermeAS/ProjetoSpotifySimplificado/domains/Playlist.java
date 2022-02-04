@@ -1,7 +1,15 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Playlist {
 
@@ -10,33 +18,33 @@ public class Playlist {
     private Long idPlaylist;
     private String nome;
 
-    @ManyToOne
-    private Musica musica;
+    @OneToMany
+    private List<Musica> musica;
 
-    public Long getIdPlaylist() {
-        return idPlaylist;
-    }
-
-    public void setIdPlaylist(Long idPlaylist) {
-        this.idPlaylist = idPlaylist;
-    }
-
-    public Playlist() {
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Musica getMusica() {
-        return musica;
-    }
-
-    public void setMusica(Musica musica) {
-        this.musica = musica;
-    }
+//    public Long getIdPlaylist() {
+//        return idPlaylist;
+//    }
+//
+//    public void setIdPlaylist(Long idPlaylist) {
+//        this.idPlaylist = idPlaylist;
+//    }
+//
+//    public Playlist() {
+//    }
+//
+//    public String getNome() {
+//        return nome;
+//    }
+//
+//    public void setNome(String nome) {
+//        this.nome = nome;
+//    }
+//
+//    public List<Musica> getMusica() {
+//        return musica;
+//    }
+//
+//    public void setMusica(List<Musica> musica) {
+//        this.musica = musica;
+//    }
 }
