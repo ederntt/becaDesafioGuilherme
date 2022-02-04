@@ -1,6 +1,7 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.domains;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Playlist {
@@ -10,8 +11,8 @@ public class Playlist {
     private Long idPlaylist;
     private String nome;
 
-    @ManyToOne
-    private Musica musica;
+    @OneToMany
+    private List<Musica> musica;
 
     public Long getIdPlaylist() {
         return idPlaylist;
@@ -32,11 +33,11 @@ public class Playlist {
         this.nome = nome;
     }
 
-    public Musica getMusica() {
+    public List<Musica> getMusica() {
         return musica;
     }
 
-    public void setMusica(Musica musica) {
+    public void setMusica(List<Musica> musica) {
         this.musica = musica;
     }
 }

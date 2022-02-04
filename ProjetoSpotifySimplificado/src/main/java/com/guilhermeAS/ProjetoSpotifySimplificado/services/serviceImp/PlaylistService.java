@@ -30,8 +30,10 @@ public class PlaylistService implements InterfacePlaylist {
 
     @Override
     public Playlist atualizarPlaylist (@NotNull Playlist nomePlaylist, Long id){
-        Playlist atualizar = this.selecionar(id);
-        atualizar.setNome(nomePlaylist.getNome());
+        Playlist atualizar = playlistRepository.findByNome(nomePlaylist.getNome());
+
+        for(int i =0; i <= nomePlaylist.getMusica().size()-1;i++ )
+            atualizar.getMusica().add(nomePlaylist.getMusica().get(i));
 
         playlistRepository.save(atualizar);
 

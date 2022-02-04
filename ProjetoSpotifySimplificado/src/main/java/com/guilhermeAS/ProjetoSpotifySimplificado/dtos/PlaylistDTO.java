@@ -8,15 +8,14 @@ import java.util.stream.Collectors;
 
 public class PlaylistDTO {
     private String nomePlaylist;
-    private  Musica musica;
+    private  List<Musica> musica;
 
     public PlaylistDTO(){}
 
-    public PlaylistDTO(String nomePlaylist, Musica musica) {
+    public PlaylistDTO(String nomePlaylist, List<Musica> musica) {
         this.nomePlaylist = nomePlaylist;
         this.musica = musica;
     }
-
 
     public PlaylistDTO(Playlist playlist) {
         this.nomePlaylist = playlist.getNome();
@@ -31,11 +30,11 @@ public class PlaylistDTO {
         this.nomePlaylist = nomePlaylist;
     }
 
-    public Musica getMusica() {
+    public List<Musica> getMusica() {
         return musica;
     }
 
-    public void setMusica(Musica musica) {
+    public void setMusica(List<Musica> musica) {
         this.musica = musica;
     }
 
