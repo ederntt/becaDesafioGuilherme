@@ -1,7 +1,6 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Artista;
-import com.guilhermeAS.ProjetoSpotifySimplificado.dtos.ArtistaDTO;
 import com.guilhermeAS.ProjetoSpotifySimplificado.mappers.ArtistaMapper;
 import com.guilhermeAS.ProjetoSpotifySimplificado.repositories.ArtistaRepository;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.InterfaceArtista;
