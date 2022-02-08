@@ -1,5 +1,6 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.controllers;
 
+import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Album;
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Artista;
 import com.guilhermeAS.ProjetoSpotifySimplificado.dtos.ArtistaDTO;
 import com.guilhermeAS.ProjetoSpotifySimplificado.mappers.ArtistaMapper;
@@ -23,6 +24,7 @@ public class ArtistaController { // CRUD = CREAT - READ - UPDATE - DELETE
     @PostMapping
     public ResponseEntity<Artista> criar(@RequestBody Artista nome) {
         Artista artistaCriado =  artistaService.criar(nome);
+        Album album = artistaService.criar(nome);
 
         return ResponseEntity.created(null).body(artistaCriado);
     }

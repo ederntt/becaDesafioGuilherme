@@ -3,9 +3,12 @@ package com.guilhermeAS.ProjetoSpotifySimplificado.controllers;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Playlist;
 import com.guilhermeAS.ProjetoSpotifySimplificado.dtos.PlaylistDTO;
+import com.guilhermeAS.ProjetoSpotifySimplificado.exceptions.ErroObject;
+import com.guilhermeAS.ProjetoSpotifySimplificado.exceptions.ExceptionHandle;
 import com.guilhermeAS.ProjetoSpotifySimplificado.mappers.PlaylistMapper;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp.PlaylistService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

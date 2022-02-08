@@ -1,7 +1,7 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Artista;
-import com.guilhermeAS.ProjetoSpotifySimplificado.dtos.ArtistaDTO;
+import com.guilhermeAS.ProjetoSpotifySimplificado.exceptions.ExceptionHandle;
 import com.guilhermeAS.ProjetoSpotifySimplificado.mappers.ArtistaMapper;
 import com.guilhermeAS.ProjetoSpotifySimplificado.repositories.ArtistaRepository;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.InterfaceArtista;
@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +22,7 @@ public class ArtistaService implements InterfaceArtista {
     private final ArtistaMapper artistaMapper;
 
     @Override
-    public Artista criar(@NotNull Artista nomeArtista) {
+    public Artista criar(@NotBlank Artista nomeArtista) {
 
         return artistaRepository.save(nomeArtista);
     }
@@ -57,7 +58,7 @@ public class ArtistaService implements InterfaceArtista {
             return obter.get();
         }
 
-            throw new RuntimeException("Artista não encontado! ");
+        throw new RuntimeException("O artista de ID " + id + " Não existe na base de dados!! ");
     }
 
 }

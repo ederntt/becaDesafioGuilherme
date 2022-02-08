@@ -7,6 +7,5 @@ import lombok.*;
 public class ArtistaDTO {
 
     private String nome;
-
-
+    
 }

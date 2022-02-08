@@ -1,12 +1,14 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Playlist;
+import com.guilhermeAS.ProjetoSpotifySimplificado.exceptions.ExceptionHandle;
 import com.guilhermeAS.ProjetoSpotifySimplificado.repositories.PlaylistRepository;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.InterfacePlaylist;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +21,7 @@ public class PlaylistService implements InterfacePlaylist {
     private final PlaylistRepository playlistRepository;
 
     @Override
-    public Playlist criarPlaylist(Playlist nomePlaylist) {
+    public Playlist criarPlaylist(@NotBlank Playlist nomePlaylist) {
         if (nomePlaylist.getNome().length() <= 0){
             throw new RuntimeException("Você não inseriu o nome da playlist!");
         }
