@@ -24,7 +24,6 @@ O projeto foi dividido em 8 partes que estão descritas em cada desafio.
 <h2> 💡 O que é possível fazer</h2>
 <li> Pesquisar músicas</li>
 <li>  Pesquisar artistas</li>
-<li>  Pesquisar coletanias</li>
 <li>  Criar sua propria playlist</li>
 
 <h2>📑 Lista de desafios</h2>
