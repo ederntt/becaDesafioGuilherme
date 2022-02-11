@@ -1,7 +1,5 @@
 
-<center>
-<img src="https://user-images.githubusercontent.com/96309673/153507245-372d54f1-1c31-4d01-84f1-e96ff9dcb9f4.png">
-</center>
+<center><img src="https://user-images.githubusercontent.com/96309673/153507245-372d54f1-1c31-4d01-84f1-e96ff9dcb9f4.png"></center>
 
 
 <h2> Sobre </h2>
