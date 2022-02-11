@@ -1,26 +1,27 @@
 package com.guilhermeAS.ProjetoSpotifySimplificado.services.serviceImp;
 
 import com.guilhermeAS.ProjetoSpotifySimplificado.domains.Playlist;
+import com.guilhermeAS.ProjetoSpotifySimplificado.exceptions.ExceptionHandle;
 import com.guilhermeAS.ProjetoSpotifySimplificado.repositories.PlaylistRepository;
 import com.guilhermeAS.ProjetoSpotifySimplificado.services.InterfacePlaylist;
+import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class PlaylistService implements InterfacePlaylist {
 
-    @Autowired
-    private ArtistaService artistaService;
+    private final ArtistaService artistaService;
 
-    @Autowired
-    private PlaylistRepository playlistRepository;
+    private final PlaylistRepository playlistRepository;
 
     @Override
-    public Playlist criarPlaylist(Playlist nomePlaylist) {
+    public Playlist criarPlaylist(@NotNull Playlist nomePlaylist) {
         if (nomePlaylist.getNome().length() <= 0){
             throw new RuntimeException("Você não inseriu o nome da playlist!");
         }
@@ -30,8 +31,10 @@ public class PlaylistService implements InterfacePlaylist {
 
     @Override
     public Playlist atualizarPlaylist (@NotNull Playlist nomePlaylist, Long id){
-        Playlist atualizar = this.selecionar(id);
-        atualizar.setNome(nomePlaylist.getNome());
+        Playlist atualizar = playlistRepository.findByNome(nomePlaylist.getNome());
+
+        for(int i =0; i <= nomePlaylist.getMusica().size()-1;i++ )
+            atualizar.getMusica().add(nomePlaylist.getMusica().get(i));
 
         playlistRepository.save(atualizar);
 
