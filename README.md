@@ -34,7 +34,7 @@ O projeto foi dividido em 8 partes que estão descritas em cada desafio.
 <li> <a href= "https://github.com/almeidaguil/becaDesafioGuilherme/tree/desafio2"> Desafio 2</a> </li>
 <li> <a href= "https://github.com/almeidaguil/becaDesafioGuilherme/tree/Desafio3"> Desafio 3</a> </li>
 <li> <a href= "https://github.com/almeidaguil/becaDesafioGuilherme/tree/Desafio4"> Desafio 4</a> </li>
-<li> <a href= "(https://github.com/almeidaguil/becaDesafioGuilherme/tree/Desafio5"> Desafio 5</a> </li>
+<li> <a href= "https://github.com/almeidaguil/becaDesafioGuilherme/tree/Desafio5"> Desafio 5</a> </li>
 <li> <a href= "https://github.com/almeidaguil/becaDesafioGuilherme/tree/Desafio6"> Desafio 6</a> </li>
 <li> <a href= "https://github.com/almeidaguil/becaDesafioGuilherme/tree/Desafio7"> Desafio 7</a> </li>
 <li> <a href= "https://github.com/almeidaguil/becaDesafioGuilherme/tree/Desafio8"> Desafio 8</a> </li>
