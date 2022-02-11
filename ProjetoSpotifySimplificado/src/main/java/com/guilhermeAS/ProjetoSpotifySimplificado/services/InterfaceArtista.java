@@ -8,13 +8,11 @@ public interface InterfaceArtista {
 
     Artista criar(Artista nome);
 
-    Artista atualizar(Artista nome, Integer id);
+    Artista atualizar(Artista nome, Long id);//
 
-    void deletar(Integer id);
+    void deletar(Long id);//
 
     List<Artista> listar();//
 
-    Artista escolher(Integer id);
-
-
+    Artista escolher(Long id);//
 }

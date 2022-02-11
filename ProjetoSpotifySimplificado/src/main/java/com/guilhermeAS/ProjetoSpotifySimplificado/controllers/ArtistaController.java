@@ -30,14 +30,14 @@ public class ArtistaController { // CRUD = CREAT - READ - UPDATE - DELETE
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Artista> atualizar(@RequestBody Artista nome, @PathVariable Integer id) {
+    public ResponseEntity<Artista> atualizar(@RequestBody Artista nome, @PathVariable Long id) {
         Artista artistaAtualizado = artistaService.atualizar(nome, id);
 
         return ResponseEntity.ok(artistaAtualizado);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deletar(@PathVariable Integer id) {
+    public ResponseEntity<String> deletar(@PathVariable Long id) {
        artistaService.deletar(id);
 
         // "Deletou o artista com ID " + id
@@ -52,7 +52,7 @@ public class ArtistaController { // CRUD = CREAT - READ - UPDATE - DELETE
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Artista> escolher(@PathVariable Integer id) {
+    public ResponseEntity<Artista> escolher(@PathVariable Long id) {
         Artista escolherArtista = artistaService.escolher(id);
 
         return ResponseEntity.ok(escolherArtista);

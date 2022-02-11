@@ -28,7 +28,7 @@ public class ArtistaService implements InterfaceArtista {
     }
 
     @Override
-    public Artista atualizar(@NotNull Artista nomeArtista, Integer id) {
+    public Artista atualizar(@NotNull Artista nomeArtista, Long id) {
         Artista modificar = this.escolher(id);
         modificar.setNome(nomeArtista.getNome());
 
@@ -38,7 +38,7 @@ public class ArtistaService implements InterfaceArtista {
     }
 
     @Override
-    public void deletar(Integer id) {
+    public void deletar(Long id) {
         artistaRepository.deleteById(id);
     }
 
@@ -51,7 +51,7 @@ public class ArtistaService implements InterfaceArtista {
     }
 
     @Override
-    public Artista escolher(Integer id) {
+    public Artista escolher(Long id) {
         Optional<Artista> obter = artistaRepository.findById(id);
 
         if (obter.isPresent()){

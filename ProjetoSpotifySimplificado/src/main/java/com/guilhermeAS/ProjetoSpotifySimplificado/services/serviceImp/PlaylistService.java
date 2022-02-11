@@ -21,7 +21,7 @@ public class PlaylistService implements InterfacePlaylist {
     private final PlaylistRepository playlistRepository;
 
     @Override
-    public Playlist criarPlaylist(@NotBlank Playlist nomePlaylist) {
+    public Playlist criarPlaylist(@NotNull Playlist nomePlaylist) {
         if (nomePlaylist.getNome().length() <= 0){
             throw new RuntimeException("Você não inseriu o nome da playlist!");
         }

@@ -11,8 +11,6 @@ O projeto é um desafio back-and da **Beca Java - NTT DATA BRASIL**.
 O projeto foi dividido em 8 partes que estão descritas em cada desafio.
 
 
-
-
 <h2> 📖 Sumário </h2>
 
 <li>  O que é possível fazer</li>
