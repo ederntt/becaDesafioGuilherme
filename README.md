@@ -118,14 +118,6 @@ para ter uma forma mais clara e objetiva com a mensagem do erro.</i>
 base dados mais fiel as usadas em aplicações reais. Uma das funções do Docker é poder definir um comportamento
 caso um container apresente falhas.</i>
 
-<h3>🙌<span style="color:red">Considerações finais: </span></h3>
-<i>A ideia é do mentor <b>Flavius Gama</b>, pessoa que me ajudou muito
-nas dificuldades que tive pelo caminho até a conclusão. Deixo aqui expresso meus agradecimentos
-pelo seu tempo e paciência que teve com seus mentorados. <br>
-Tiveram algumas partes bem desafiadoras, onde travei, mas corri atrás de ajuda para conseguir
-conclui-lo. Foram muitos aprendizados nessa caminhada, sei que ainda tenho muito a
-aprender, mas até aqui me sinto satisfeito. Guardarei esse projeto com
-muito carinho e futuramente espero voltar aqui e melhora-lo.</i>
 
 <h2> Diagrama</h2>
 Modelo conceitual
