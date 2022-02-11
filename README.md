@@ -101,7 +101,7 @@ além de conhecer a anotação @Lombok para um código mais limpo e simplificado
 <li>  Fazer testes para verificar se o resultado dos erros é o esperado.</li>
 
 <i>O objetivo do desafio 7 é aprofundar o conhecimento em tratamento de erros que tenham retorno
-de forma customizadas para facilitar o entendimento dos mesmo. Utilizando thy catch para um erro 
+de forma customizadas para facilitar o entendimento dos mesmo. Utilizando try catch para um erro 
 condicional, @ExceptionHandler para retorno de mensagem explicativa do erro e o @ControllerAdvice
 para ter uma forma mais clara e objetiva com a mensagem do erro.</i>
 
