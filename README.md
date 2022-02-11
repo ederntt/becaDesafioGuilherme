@@ -11,15 +11,6 @@ O projeto é um desafio back-and da **Beca Java - NTT DATA BRASIL**.
 O projeto foi dividido em 8 partes que estão descritas em cada desafio.
 
 
-<h2> 📖 Sumário </h2>
-
-<li>  O que é possível fazer</li>
-<li>  Lista dos desafios</li>
-<li>  Tecnologias utilizadas</li>
-<li>  Resumo dos desafios</li>
-<li>  Considerações finais</li>
-<li>  Diagrama</li>
-<li>  Fluxogramas</li>
 
 <h2> 💡 O que é possível fazer</h2>
 <li> Pesquisar músicas</li>
@@ -117,6 +108,7 @@ para ter uma forma mais clara e objetiva com a mensagem do erro.</i>
 <i>O objetivo do desafio 8 é aprofundar o conhecimento em banco de dados e integração com uma
 base dados mais fiel as usadas em aplicações reais. Uma das funções do Docker é poder definir um comportamento
 caso um container apresente falhas.</i>
+
 
 
 <h2> Diagrama</h2>
