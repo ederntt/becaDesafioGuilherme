@@ -140,30 +140,30 @@ Adicionar novo artista:
 <img src="https://user-images.githubusercontent.com/96309673/152421556-296adf00-fbe6-4534-8d22-b2587a722145.png">
 
 Atualizar nome de artista existente:
-<img src="img.png">
+<img src="https://user-images.githubusercontent.com/96309673/153522950-8fbb2d61-6b91-4479-89dc-18b2b7de7d8d.png">
 
 Criar álbum (vinculado ao artista já existente):
-<img src="img_1.png">
+<img src="https://user-images.githubusercontent.com/96309673/153522978-9f8125ec-9ade-4680-9df9-36bf90996625.png">
 
 Adicionar música (vinculada a álbum já existente):
-<img src="img_2.png">
+<img src="https://user-images.githubusercontent.com/96309673/153522991-170af4c5-adc2-4506-ac94-d859cf23340e.png">
 
 <h2>🧔 Fluxogramas USER:</h2>
 
 Criar playlist:
-<<img src="img_3.png">
+<<img src="https://user-images.githubusercontent.com/96309673/153523008-1dae3123-9a39-466b-bab0-fa7f83d96c5b.png">
 
 Atualizar nome da playlist existente:
-<img src="img_4.png">
+<img src="https://user-images.githubusercontent.com/96309673/153523024-f66085e2-2312-4033-815e-ac8e0a222165.png">
 
 Adicionar música a uma playlist existente:
-<img src="img_5.png">
+<img src="https://user-images.githubusercontent.com/96309673/153523042-fefb7e7e-e003-4053-8007-b477bac8fdee.png">
 
 Deletar uma música playlist:
-<img src="img_6.png">
+<img src="https://user-images.githubusercontent.com/96309673/153523055-9bed0ee7-032d-4603-859f-7aaa6a433de4.png">
 
 Buscar se uma música existe no BD:
-<img src="img_7.png">
+<img src="https://user-images.githubusercontent.com/96309673/153523071-e3e1119c-876e-4a26-a591-8acbbee035ba.png">
 
 Buscar se um artista existe no BD:
-<img src="img_8.png">
+<img src="https://user-images.githubusercontent.com/96309673/153523080-bd44d3ee-7d61-4e6a-a624-655d2b15818b.png">
